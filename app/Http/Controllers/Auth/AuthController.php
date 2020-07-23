@@ -17,6 +17,7 @@ class AuthController extends CustomController
     public function __construct()
     {
         parent::__construct();
+        $this->middleware('guest')->except('logout');
     }
 
     public function index()
@@ -34,5 +35,11 @@ class AuthController extends CustomController
             return redirect('/admin');
         }
         return redirect()->back()->with(['fail' => 'Periksa Username & Password']);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }
