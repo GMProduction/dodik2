@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('lelang/datalelang');
-});
+//Route::get('/', function () {
+//    return view('lelang/datalelang');
+//});
+Route::get('/', 'Auth\AuthController@index');
+Route::post('/postlogin', 'Auth\AuthController@login');
 
+Route::get('/admin', 'Main\MainController@index');
 Route::get('/tambahlelang', function () {
     return view('lelang/tambahlelang');
 });
