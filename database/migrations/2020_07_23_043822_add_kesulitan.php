@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class AddKesulitan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('username');
-            $table->string('password');
-            $table->enum('level', ['pimpinan', 'admin'])->default('admin');
-            $table->timestamps();
+        Schema::table('lelang', function (Blueprint $table) {
+            //
+            $table->string('kesulitan');
         });
     }
 
@@ -29,6 +26,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::table('lelang', function (Blueprint $table) {
+            //
+        });
     }
 }

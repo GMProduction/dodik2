@@ -8,16 +8,18 @@
     <meta name="author" content="Creative Tim">
     <title>IKS</title>
     <!-- Favicon -->
-{{--    <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">--}}
+    <link rel="icon" href="{{ asset('/assets/img/brand/favicon.png') }}" type="image/png">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
-    <link rel="stylesheet" href="../assets/vendor/nucleo/css/nucleo.css" type="text/css">
-    <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
-    <link rel="stylesheet" href="../assets/css/argon.css?v=1.2.0" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/assets/css/argon.css?v=1.2.0') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/sweetalert2/dist/sweetalert2.min.css') }}" type="text/css">
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="{{ asset('/assets/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
 </head>
 
 <body style="background-color: #eeeeee">
@@ -26,7 +28,7 @@
     <div class="scrollbar-inner">
         <!-- Brand -->
         <div class="sidenav-header" style="margin-top: 20px; margin-left: 24px; height: 40px; text-align: start">
-            <img src="../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+            <img src="{{ asset('/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
             <a> IKS</a>
         </div>
         <div class="navbar-inner">
@@ -35,19 +37,19 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">
+                        <a class="nav-link active" href="/admin/lelang">
                             <i data-feather="file-plus"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Data Lelang</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/datajadwal">
+                        <a class="nav-link" href="/admin/jadwal">
                             <i data-feather="file-text"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Data Jadwal</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/datatahapan">
+                        <a class="nav-link" href="/admin/tahapan">
                             <i data-feather="file"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Data Tahapan</span>
                         </a>
@@ -104,13 +106,13 @@
                                 <div class="row align-items-center">
                                     <div class="col-auto">
                                         <!-- Avatar -->
-                                        <img alt="Image placeholder" src="../assets/img/theme/team-1.jpg"
+                                        <img alt="Image placeholder" src="{{ asset('assets/img/theme/team-1.jpg') }}"
                                              class="avatar rounded-circle">
                                     </div>
                                     <div class="col ml--2">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
-                                                <h4 class="mb-0 text-sm">John Snow</h4>
+                                                <h4 class="mb-0 text-sm">{{ auth()->user()->username }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -127,16 +129,16 @@
                            aria-expanded="false">
                             <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="../assets/img/theme/team-4.jpg">
+                    <img alt="Image placeholder" src="{{ asset('assets/img/theme/team-4.jpg') }}">
                   </span>
                                 <div class="media-body  ml-2  d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                                    <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->username }}</span>
                                 </div>
                             </div>
                         </a>
                         <div class="dropdown-menu  dropdown-menu-right ">
 
-                            <a href="#!" class="dropdown-item">
+                            <a href="/logout" class="dropdown-item">
                                 <i class="ni ni-user-run"></i>
                                 <span>Logout</span>
                             </a>
