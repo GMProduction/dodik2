@@ -77,11 +77,11 @@
                                 </div>
                             </div>
 
-                            <hr class="my-4"/>
-                            <!-- Description -->
-                            <div class="col-12 text-right">
-                                <a href="#!" class="btn btn-lg btn-primary">Simpan</a>
-                            </div>
+                                <hr class="my-4"/>
+                                <!-- Description -->
+                                <div class="col-12 text-right">
+                                    <a href="#!" class="btn btn-lg btn-primary">Simpan</a>
+                                </div>
                         </form>
                     </div>
                 </div>

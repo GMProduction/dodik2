@@ -73,7 +73,7 @@ class LaporanController extends Controller
     {
 
         $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($this->dataTahapan($request));
+        $pdf->loadHTML($this->dataTahapan/($request));
         return $pdf->stream();
     }
 }
