@@ -1,6 +1,15 @@
 @extends('base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Menyimpan Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -11,7 +20,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#">Data Lelang</a></li>
+                                <li class="breadcrumb-item"><a href="admin/lelang">Data Lelang</a></li>
                                 <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                             </ol>
                         </nav>
@@ -29,18 +38,12 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form method="POST" action="/admin/lelang/store" enctype="multipart/form-data">
+                            @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="idLelang">ID Lelang</label>
-                                            <input type="text" id="idLelang" name="idLelang" class="form-control"
-                                                   placeholder="ID Lelang">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="form-control-label" for="kodeLelang">Kode Lelang</label>
                                             <input type="text" id="kodeLelang" name="kodeLelang" class="form-control"
@@ -71,7 +74,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="kodeLelang">Reward </label>
-                                            <input type="text" id="kodeLelang" name="kodeLelang" class="form-control"
+                                            <input type="text" id="reward" name="reward" class="form-control"
                                                    placeholder="Reward">
                                         </div>
                                     </div>
@@ -96,22 +99,25 @@
                                         <a>File Dok Penawaran</a>
                                         <div class="custom-file">
                                             <label class="custom-file-label" for="filePenawaran">Select file</label>
-                                            <input type="file" class="custom-file-input" id="filePenawaran" name="filePenawaran" lang="en">
+                                            <input type="file" class="custom-file-input" id="filePenawaran"
+                                                   name="filePenawaran" lang="en">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <a>File Dok Teknis</a>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="fileTeknis" name="fileTeknis" lang="en">
-                                            <label class="custom-file-label" for="fileTeknis" >Select file</label>
+                                            <input type="file" class="custom-file-input" id="fileTeknis"
+                                                   name="fileTeknis" lang="en">
+                                            <label class="custom-file-label" for="fileTeknis">Select file</label>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <a>File Dok Kualifikasi</a>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="fileKualifikasi" name="fileKualifikasi" lang="en">
+                                            <input type="file" class="custom-file-input" id="fileKualifikasi"
+                                                   name="fileKualifikasi" lang="en">
                                             <label class="custom-file-label" for="fileKualifikasi">Select file</label>
                                         </div>
                                     </div>
@@ -120,7 +126,7 @@
                             <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right">
-                                <a href="#!" class="btn btn-lg btn-primary">Simpan</a>
+                                <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
                     </div>

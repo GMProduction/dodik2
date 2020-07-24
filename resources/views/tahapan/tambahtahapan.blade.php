@@ -1,6 +1,15 @@
 @extends('base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Menyimpan Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -11,7 +20,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#">Data Tahapan</a></li>
+                                <li class="breadcrumb-item"><a href="/admin/tahapan">Data Tahapan</a></li>
                                 <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                             </ol>
                         </nav>
@@ -29,23 +38,17 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form action="/admin/tahapan/store" method="post">
+                            @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="idJadwal">ID Tahapan</label>
-                                            <input type="text" id="idJadwal" name="idJadwal" class="form-control"
-                                                   placeholder="ID Jadwal">
-                                        </div>
-                                    </div>
                                     <div class="form-group col-lg-6">
                                         <label for="exampleFormControlSelect1">ID Lelang</label>
                                         <select class="form-control" id="idLelang" name="IdLelang">
-                                            <option value="1">1</option>
-                                            <option>2</option>
-                                            <option>3</option>
+                                            @foreach($lelangs as $lelang)
+                                                <option value="{{ $lelang->id }}">{{ $lelang->nama }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -75,7 +78,7 @@
                             <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right">
-                                <a href="#!" class="btn btn-lg btn-primary">Simpan</a>
+                                <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
                     </div>
