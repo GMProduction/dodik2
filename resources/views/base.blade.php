@@ -18,6 +18,9 @@
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/css/argon.css?v=1.2.0') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/assets/vendor/sweetalert2/dist/sweetalert2.min.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{asset('/assets/DataTables/datatables.css')}}">
+
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="{{ asset('/assets/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
 </head>
