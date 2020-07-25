@@ -63,3 +63,6 @@ Route::get('/tambahjadwal', function () {
 //    return view('login/login');
 //}
 //);
+Route::get('/cetakdatalelang', 'LaporanController@cetakDataLelang')->name('cetakDataLelang');
+Route::get('/cetakdatajadwal', 'LaporanController@cetakDataJadwal')->name('cetakDataJadwal');
+Route::get('/cetakdatatahapan', 'LaporanController@cetakDataTahapan')->name('cetakDataTahapan');

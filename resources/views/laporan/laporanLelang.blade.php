@@ -44,7 +44,7 @@
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="#!" class="btn btn-md btn-primary">Cetak</a>
+                                        <a href="/cetakdatalelang" class="btn btn-md btn-primary">Cetak</a>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="#!" class="btn btn-md btn-primary">Cetak</a>
+                                        <a href="/cetakdatajadwal" class="btn btn-md btn-primary">Cetak</a>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="#!" class="btn btn-md btn-primary">Cetak</a>
+                                        <a href="/cetakdatatahapan" class="btn btn-md btn-primary">Cetak</a>
                                     </div>
                                 </div>
                             </div>
