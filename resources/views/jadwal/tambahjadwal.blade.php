@@ -46,6 +46,7 @@
                                     <div class="form-group col-lg-2">
                                         <label for="idLelang">ID Lelang</label>
                                         <select class="form-control" id="idLelang" name="IdLelang">
+                                            <option value="">Pilih Nama Lelang</option>
                                             @foreach($lelangs as $lelang)
                                                 <option value="{{ $lelang->id }}">{{ $lelang->nama }}</option>
                                             @endforeach

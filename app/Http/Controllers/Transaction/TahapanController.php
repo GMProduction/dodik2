@@ -32,15 +32,33 @@ class TahapanController extends CustomController
         return view('tahapan.tambahtahapan')->with(['lelangs' => $lelangs]);
     }
 
+    public function editForm($id)
+    {
+        $data['lelangs'] = Lelang::all();
+        $data['tahapan'] = Tahapan::findOrFail($id);
+        return view('tahapan.edittahapan')->with($data);
+    }
+
     public function store()
     {
-
         $data = [
             'lelang_id' => $this->postField('IdLelang'),
             'tanggal_upload' => $this->postField('btasWaktu'),
             'pekerjaan' => $this->postField('pekerjaan')
         ];
         $this->insert(Tahapan::class, $data);
+        return redirect()->back()->with(['success' => 'success']);
+    }
+
+    public function updateTahapan()
+    {
+        $data = [
+            'id' => $this->postField('id'),
+            'lelang_id' => $this->postField('IdLelang'),
+            'tanggal_upload' => $this->postField('btasWaktu'),
+            'pekerjaan' => $this->postField('pekerjaan')
+        ];
+        $this->update(Tahapan::class, $data);
         return redirect()->back()->with(['success' => 'success']);
     }
 }

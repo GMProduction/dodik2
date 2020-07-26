@@ -40,19 +40,19 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/lelang">
+                        <a id="lelang" class="nav-link" href="/admin/lelang">
                             <i data-feather="file-plus"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Data Lelang</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/jadwal">
+                        <a id="jadwal" class="nav-link" href="/admin/jadwal">
                             <i data-feather="file-text"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Data Jadwal</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/tahapan">
+                        <a id="tahapan" class="nav-link" href="/admin/tahapan">
                             <i data-feather="file"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Data Tahapan</span>
                         </a>
@@ -65,8 +65,8 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link"
-                           href="/laporanlelang">
+                        <a class="nav-link" id="laporan"
+                           href="/admin/laporan">
                             <i data-feather="clipboard"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Laporan</span>
                         </a>
@@ -169,9 +169,11 @@
         </div>
     </footer>
 </div>
+<script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+
+<script src="{{asset('assets/DataTables/datatables.min.js')}}"></script>
 <!-- Argon Scripts -->
 <!-- Core -->
-<script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/vendor/js-cookie/js.cookie.js')}}"></script>
 <script src="{{asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
@@ -181,6 +183,7 @@
 <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0s')}}" ></script>
+<script src="{{asset('assets/js/componen.js')}}" ></script>
 <script>
     feather.replace()
 </script>

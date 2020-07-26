@@ -4,7 +4,7 @@
         <script>
             Swal.fire({
                 title: 'Success',
-                text: 'Berhasil Menyimpan Data',
+                text: 'Berhasil Merubah Data',
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
@@ -16,12 +16,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Tambah Data Tahapan</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Data Tahapan</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/admin/tahapan">Data Tahapan</a></li>
-                                <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
+                                <li class="breadcrumb-item"><a href="#">Edit Data</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -38,8 +38,9 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/admin/tahapan/store" method="post">
+                        <form action="/admin/tahapan/update" method="post">
                             @csrf
+                            <input value="{{$tahapan->id}}" name="id" id="id" hidden>
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
@@ -62,14 +63,14 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="btasWaktu" class="form-control-label">Batas Waktu Upload</label>
-                                            <input class="form-control" type="date" id="btasWaktu" name="btasWaktu">
+                                            <input class="form-control" type="date" id="btasWaktu" name="btasWaktu" value="{{$tahapan->tanggal_upload}}">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="pekerjaan">Pekerjaan</label>
-                                            <input type="text" id="pekerjaan" name="pekerjaan" class="form-control"
+                                            <input type="text" id="pekerjaan" name="pekerjaan" class="form-control"  value="{{$tahapan->pekerjaan}}"
                                                    placeholder="Pekerjaan">
                                         </div>
                                     </div>
@@ -95,6 +96,10 @@
 @endsection
 
 @section('script')
-
+    <script>
+        $(document).ready(function () {
+            $('#idLelang').val('{{$tahapan->lelang_id}}');
+        })
+    </script>
 
 @endsection

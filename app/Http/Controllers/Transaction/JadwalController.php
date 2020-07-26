@@ -8,8 +8,13 @@ use App\Model\Jadwal;
 use App\Model\Lelang;
 use Illuminate\Http\Request;
 
+/**
+ * Class JadwalController
+ * @package App\Http\Controllers\Transaction
+ */
 class JadwalController extends CustomController
 {
+
     //
     /**
      * JadwalController constructor.
@@ -31,6 +36,17 @@ class JadwalController extends CustomController
         return view('jadwal.tambahjadwal')->with(['lelangs' => $lelangs]);
     }
 
+    public function editForm($id)
+    {
+        $data = [];
+        $jadwals = Jadwal::findOrFail($id);
+        $lelangs = Lelang::all();
+        $data['jadwals'] = $jadwals;
+        $data['lelangs'] = $lelangs;
+
+        return view('jadwal.editjadwal')->with($data);
+    }
+
     public function store()
     {
 
@@ -41,6 +57,20 @@ class JadwalController extends CustomController
             'batas' => $this->postField('btasWaktu'),
         ];
         $this->insert(Jadwal::class, $data);
+        return redirect()->back()->with(['success' => 'success']);
+    }
+
+    public function updateJadwal()
+    {
+
+        $data = [
+            'id' => $this->postField('id'),
+            'lelang_id' => $this->postField('IdLelang'),
+            'keterangan' => $this->postField('keteranganJadwal'),
+            'jadwal' => $this->postField('jadwalPrakualifikasi'),
+            'batas' => $this->postField('btasWaktu'),
+        ];
+        $this->update(Jadwal::class, $data);
         return redirect()->back()->with(['success' => 'success']);
     }
 }

@@ -13,4 +13,5 @@ class Jadwal extends Model
     {
         return $this->belongsTo(Lelang::class);
     }
+
 }

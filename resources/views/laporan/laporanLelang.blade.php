@@ -26,7 +26,8 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form method="get" action="/cetakdatalelang">
+{{--                            @csrf--}}
                             <h6 class="heading-small text-muted mb-4">Data Lelang</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
@@ -44,7 +45,7 @@
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="/cetakdatalelang" class="btn btn-md btn-primary">Cetak</a>
+                                        <button type="submit" href="/cetakdatalelang" class="btn btn-md btn-primary">Cetak</button>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +60,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form method="get" action="/cetakdatajadwal">
                             <h6 class="heading-small text-muted mb-4">Data Jadwal</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
@@ -77,7 +78,7 @@
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="/cetakdatajadwal" class="btn btn-md btn-primary">Cetak</a>
+                                        <button type="submit" class="btn btn-md btn-primary">Cetak</button>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +93,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form action="/cetakdatatahapan" method="get">
                             <h6 class="heading-small text-muted mb-4">Data Tahapan</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
@@ -110,7 +111,7 @@
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="/cetakdatatahapan" class="btn btn-md btn-primary">Cetak</a>
+                                        <button type="submit" class="btn btn-md btn-primary">Cetak</button>
                                     </div>
                                 </div>
                             </div>

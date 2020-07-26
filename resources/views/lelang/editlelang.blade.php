@@ -4,7 +4,7 @@
         <script>
             Swal.fire({
                 title: 'Success',
-                text: 'Berhasil Menyimpan Data',
+                text: 'Berhasil Merubah Data',
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
@@ -16,12 +16,12 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Tambah Data Lelang</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Edit Data Lelang</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="/admin/lelang">Data Lelang</a></li>
-                                <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
+                                <li class="breadcrumb-item"><a href="#">Edit Data</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -38,15 +38,16 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form method="POST" action="/admin/lelang/store" enctype="multipart/form-data">
+                        <form method="POST" action="/admin/lelang/update" enctype="multipart/form-data">
                             @csrf
+                            <input value="{{$lelang->id}}" name="id" id="id" hidden>
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="form-control-label" for="kodeLelang">Kode Lelang</label>
-                                            <input type="text" id="kodeLelang" name="kodeLelang" class="form-control"
+                                            <input type="text" id="kodeLelang" name="kodeLelang" readonly value="{{$lelang->kode_lelang}}" class="form-control"
                                                    placeholder="Kode Lelang">
                                         </div>
                                     </div>
@@ -55,7 +56,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="form-control-label" for="namaLelang">Nama Lelang</label>
-                                            <input type="text" id="namaLelang" name="namaLelang" class="form-control"
+                                            <input type="text" id="namaLelang" name="namaLelang" class="form-control" value="{{$lelang->nama}}"
                                                    placeholder="Nama Lelang">
                                         </div>
                                     </div>
@@ -67,14 +68,14 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="linkWebsite">Link Website</label>
-                                            <input type="text" id="linkWebsite" name="linkWebsite" class="form-control"
+                                            <input type="text" id="linkWebsite" name="linkWebsite" class="form-control" value="{{$lelang->link}}"
                                                    placeholder="Link Website">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="kodeLelang">Reward </label>
-                                            <input type="text" id="reward" name="reward" class="form-control"
+                                            <input type="text" id="reward" name="reward" class="form-control" value="{{$lelang->reward}}"
                                                    placeholder="Reward">
                                         </div>
                                     </div>
@@ -86,7 +87,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="form-control-label" for="kesulitan">Kesulitan</label>
-                                            <input type="text" id="kesulitan" name="kesulitan" class="form-control"
+                                            <input type="text" id="kesulitan" name="kesulitan" class="form-control" value="{{$lelang->kesulitan}}"
                                                    placeholder="Kesulitan">
                                         </div>
                                     </div>
@@ -97,27 +98,30 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <a>File Dok Penawaran</a>
+                                        <label>{{$lelang->file_penawaran}}</label>
                                         <div class="custom-file">
                                             <label class="custom-file-label" for="filePenawaran">Select file</label>
-                                            <input type="file" class="custom-file-input" id="filePenawaran"
+                                            <input type="file" class="custom-file-input" id="filePenawaran" value=""
                                                    name="filePenawaran" lang="en">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <a>File Dok Teknis</a>
+                                        <label>{{$lelang->file_teknis}}</label>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="fileTeknis"
-                                                   name="fileTeknis" lang="en">
+                                                   name="fileTeknis" lang="en" value="">
                                             <label class="custom-file-label" for="fileTeknis">Select file</label>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <a>File Dok Kualifikasi</a>
+                                        <label>{{$lelang->file_kualifikasi}}</label>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="fileKualifikasi"
-                                                   name="fileKualifikasi" lang="en">
+                                                   name="fileKualifikasi" lang="en" value="">
                                             <label class="custom-file-label" for="fileKualifikasi">Select file</label>
                                         </div>
                                     </div>

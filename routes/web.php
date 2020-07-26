@@ -23,15 +23,23 @@ Route::group(['prefix' => 'admin'], function (){
 
    Route::get('/lelang', 'Transaction\LelangController@index');
    Route::get('/lelang/add', 'Transaction\LelangController@addForm');
+   Route::get('/lelang/edit/{id}', 'Transaction\LelangController@editForm');
    Route::post('/lelang/store', 'Transaction\LelangController@store');
+   Route::post('/lelang/update', 'Transaction\LelangController@updateLelang');
 
     Route::get('/jadwal', 'Transaction\JadwalController@index');
     Route::get('/jadwal/add', 'Transaction\JadwalController@addForm');
+    Route::get('/jadwal/edit/{id}', 'Transaction\JadwalController@editForm');
     Route::post('/jadwal/store', 'Transaction\JadwalController@store');
+    Route::post('/jadwal/update', 'Transaction\JadwalController@updateJadwal');
 
     Route::get('/tahapan', 'Transaction\TahapanController@index');
     Route::get('/tahapan/add', 'Transaction\TahapanController@addForm');
+    Route::get('/tahapan/edit/{id}', 'Transaction\TahapanController@editForm');
     Route::post('/tahapan/store', 'Transaction\TahapanController@store');
+    Route::post('/tahapan/update', 'Transaction\TahapanController@updateTahapan');
+
+    Route::get('/laporan', 'LaporanController@index');
 
 });
 
