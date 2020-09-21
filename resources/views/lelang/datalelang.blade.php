@@ -57,21 +57,11 @@
                                     <td>{{ $lelang->link }}</td>
                                     <td>{{ $lelang->reward }}</td>
                                     <td>{{ $lelang->kesulitan }}</td>
-                                    <td>{{ $lelang->file_penawaran }}</td>
-                                    <td>{{ $lelang->file_teknis }}</td>
-                                    <td>{{ $lelang->file_kualifikasi }}</td>
+                                    <td><a href="{{ asset('/uploads/penawaran') }}/{{ $lelang->file_penawaran }}">{{ $lelang->file_penawaran }}</a></td>
+                                    <td><a href="{{ asset('/uploads/teknis') }}/{{ $lelang->file_penawaran }}">{{ $lelang->file_teknis }}</a></td>
+                                    <td><a href="{{ asset('/uploads/kualifikasi') }}/{{ $lelang->file_penawaran }}">{{ $lelang->file_kualifikasi }}</a></td>
                                     <td class="text-right">
-                                        <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
+                                        <a href="/admin/lelang/edit/{{$lelang->id}}">Edit</a>
                                     </td>
                                 </tr>
                                 @endforeach

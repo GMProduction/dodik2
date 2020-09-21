@@ -22,13 +22,20 @@ class JadwalController extends CustomController
     public function index()
     {
         $jadwal = Jadwal::with('lelang')->get();
-        return view('jadwal.datajadwal')->with(['jadwals' => $jadwal]);
+        $alert = Jadwal::with('lelang')->where('batas', '=', date('Y-m-d'))->get();
+        return view('jadwal.datajadwal')->with(['jadwals' => $jadwal, 'alert' => $alert]);
     }
 
     public function addForm()
     {
         $lelangs = Lelang::all();
         return view('jadwal.tambahjadwal')->with(['lelangs' => $lelangs]);
+    }
+    public function editForm($id)
+    {
+        $jadwal = Jadwal::findOrFail($id);
+        $lelangs = Lelang::all();
+        return view('jadwal.editjadwal')->with(['jadwal' => $jadwal, 'lelangs' => $lelangs]);
     }
 
     public function store()
@@ -41,6 +48,19 @@ class JadwalController extends CustomController
             'batas' => $this->postField('btasWaktu'),
         ];
         $this->insert(Jadwal::class, $data);
+        return redirect()->back()->with(['success' => 'success']);
+    }
+
+    public function patch()
+    {
+
+        $data = [
+            'lelang_id' => $this->postField('IdLelang'),
+            'keterangan' => $this->postField('keteranganJadwal'),
+            'jadwal' => $this->postField('jadwalPrakualifikasi'),
+            'batas' => $this->postField('btasWaktu'),
+        ];
+        $this->update(Jadwal::class, $data);
         return redirect()->back()->with(['success' => 'success']);
     }
 }

@@ -34,6 +34,8 @@ class AuthController extends CustomController
         if ($this->isAuth($credentials)) {
             return redirect('/admin');
         }
+//        dump($credentials);
+//        die();
         return redirect()->back()->with(['fail' => 'Periksa Username & Password']);
     }
 

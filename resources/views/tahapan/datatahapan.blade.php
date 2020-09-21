@@ -50,6 +50,7 @@
                                     <td>{{ $tahapan->lelang->nama }}</td>
                                     <td>{{ $tahapan->tanggal_upload }}</td>
                                     <td>{{ $tahapan->pekerjaan }}</td>
+                                    <td><a href="/admin/tahapan/edit/{{ $tahapan->id }}">Edit</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

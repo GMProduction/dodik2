@@ -70,7 +70,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="jadwalPrakualifikasi" class="form-control-label">Jadwal
-                                                Prakualifikasi</label>
+                                                Upload</label>
                                             <input class="form-control" type="date" id="jadwalPrakualifikasi"
                                                    name="jadwalPrakualifikasi">
                                         </div>

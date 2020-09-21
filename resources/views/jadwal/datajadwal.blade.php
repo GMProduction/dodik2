@@ -53,8 +53,9 @@
                                     <td>{{ $jadwal->keterangan }}</td>
                                     <td>{{ $jadwal->jadwal }}</td>
                                     <td>{{ $jadwal->batas}}</td>
+                                    <td><a href="/admin/jadwal/edit/{{$jadwal->id}}">edit</a></td>
                                 </tr>
-                                @endforeach
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -90,6 +91,16 @@
 
     </div>
 
+    @if(count($alert) > 0)
+        <div class="alert alert-danger" role="alert">
+            Daftar Batas Waktu Upload Untuk Hari Ini
+            <ul>
+                @foreach($alert as $v)
+                    <li>Kode Lelang {{ $v->lelang->kode_lelang }} dengan Nama Lelang ({{$v->lelang->nama}})</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 @endsection
 
 @section('script')

@@ -181,4 +181,12 @@ class CustomController extends Controller
             'payload' => $data
         ], $status);
     }
+
+    public function convertToPdf($viewRender, $data = [])
+    {
+        $html = view($viewRender)->with($data);
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($html);
+        return $pdf->stream();
+    }
 }

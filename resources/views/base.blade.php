@@ -37,6 +37,12 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link active" href="/admin/user">
+                            <i data-feather="file-plus"></i>
+                            <span class="nav-link-text" style="margin-left: 10px">Data User</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="/admin/lelang">
                             <i data-feather="file-plus"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Data Lelang</span>
@@ -63,7 +69,7 @@
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
                         <a class="nav-link"
-                           href="/laporanlelang">
+                           href="/admin/laporan">
                             <i data-feather="clipboard"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Laporan</span>
                         </a>
@@ -76,7 +82,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">
+                        <a class="nav-link" href="/logout" target="_blank">
                             <i class="text-red " data-feather="log-out"></i>
                             <span class="nav-link-text text-red" style="margin-left: 10px">Log out</span>
                         </a>

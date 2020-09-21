@@ -26,25 +26,26 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form action="/admin/laporan/cetak/lelang" method="get" target="_blank">
+                            @csrf
                             <h6 class="heading-small text-muted mb-4">Data Lelang</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label for="dariLelang" class="form-control-label">Dari</label>
-                                            <input class="form-control" type="date"  id="dariLelang" name="dariLelang">
+                                            <input class="form-control" type="date"  id="dariLelang" name="tgl1">
                                         </div>
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label for="sampaiLelang" class="form-control-label">Sampai</label>
-                                            <input class="form-control" type="date" id="sampaiLelang" name="sampaiLelang">
+                                            <input class="form-control" type="date" id="sampaiLelang" name="tgl2">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="#!" class="btn btn-md btn-primary">Cetak</a>
+                                        <button type="submit"  class="btn btn-md btn-primary">Cetak</button>
                                     </div>
                                 </div>
                             </div>
@@ -59,25 +60,26 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form action="/admin/laporan/cetak/jadwal" method="get" target="_blank">
+                            @csrf
                             <h6 class="heading-small text-muted mb-4">Data Jadwal</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label for="dariJadwal" class="form-control-label">Dari</label>
-                                            <input class="form-control" type="date"  id="dariJadwal" name="dariJadwal">
+                                            <input class="form-control" type="date"  id="dariJadwal" name="tgl1">
                                         </div>
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label for="sampaiJadwal" class="form-control-label">Sampai</label>
-                                            <input class="form-control" type="date" id="sampaiJadwal" name="sampaiJadwal">
+                                            <input class="form-control" type="date" id="sampaiJadwal" name="tgl2">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="#!" class="btn btn-md btn-primary">Cetak</a>
+                                        <button type="submit"  class="btn btn-md btn-primary">Cetak</button>
                                     </div>
                                 </div>
                             </div>
@@ -92,25 +94,26 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form>
+                        <form action="/admin/laporan/cetak/tahapan" method="get" target="_blank">
+                            @csrf
                             <h6 class="heading-small text-muted mb-4">Data Tahapan</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label for="dariTahapan" class="form-control-label">Dari</label>
-                                            <input class="form-control" type="date"  id="dariTahapan" name="dariTahapan">
+                                            <input class="form-control" type="date"  id="dariTahapan" name="tgl1">
                                         </div>
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <label for="sampaiTahapan" class="form-control-label">Sampai</label>
-                                            <input class="form-control" type="date" id="sampaiTahapan" name="sampaiTahapan">
+                                            <input class="form-control" type="date" id="sampaiTahapan" name="tgl2">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-2 text-right mt-auto mb-auto">
-                                        <a href="#!" class="btn btn-md btn-primary">Cetak</a>
+                                        <button type="submit"  class="btn btn-md btn-primary">Cetak</button>
                                     </div>
                                 </div>
                             </div>
